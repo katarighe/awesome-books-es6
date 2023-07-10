@@ -52,4 +52,6 @@ class thisBook {
   }
 }
 
+const book = new thisBook();
+
 export default thisBook;
