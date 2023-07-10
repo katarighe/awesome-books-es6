@@ -52,6 +52,4 @@ class thisBook {
   }
 }
 
-thisBook.displayBooks();
-
 export default thisBook;
