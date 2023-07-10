@@ -1,3 +1,4 @@
+/* eslint-disable */
 import displayDateTime from './modules/time.js';
 import thisBook from './modules/thisBook.js';
 

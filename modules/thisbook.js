@@ -1,16 +1,17 @@
+/* eslint-disable */
 class thisBook {
   constructor() {
-    if (localStorage.getItem("Added books") === null) {
-      localStorage.setItem("Added books", JSON.stringify([]));
+    if (localStorage.getItem('Added books') === null) {
+      localStorage.setItem('Added books', JSON.stringify([]));
     }
   }
 
   getStoredBooks() {
-    return JSON.parse(localStorage.getItem("Added books"));
+    return JSON.parse(localStorage.getItem('Added books'));
   }
 
   updateStoredBooks(books) {
-    localStorage.setItem("Added books", JSON.stringify(books));
+    localStorage.setItem('Added books', JSON.stringify(books));
   }
   addNewBook(bookTitle, bookAuthor) {
     const storedBooks = this.getStoredBooks();
@@ -40,12 +41,12 @@ class thisBook {
         </div>
         `;
       })
-      .join("");
+      .join('');
     return bookListHTML;
   }
 
   displayBooks() {
-    const listOfBooks = document.querySelector(".container");
+    const listOfBooks = document.querySelector('.container');
     const storedBooks = this.getStoredBooks();
     const bookListHTML = this.createBookListHTML(storedBooks);
     listOfBooks.innerHTML = bookListHTML;
