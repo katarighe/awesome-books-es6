@@ -1,4 +1,5 @@
-import thisBook from './thisBook.js';
+import displayDateTime from './modules/time.js';
+import thisBook from './modules/thisBook.js';
 
 const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
@@ -7,8 +8,6 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   thisBook.addNewBook(title.value, author.value);
 });
-
-thisBook.displayBooks();
 
 const pages = document.querySelectorAll('.nav-link');
 const booklist = document.querySelector('.book-section');
