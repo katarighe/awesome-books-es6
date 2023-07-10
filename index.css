@@ -10,12 +10,12 @@ body {
 }
 
 h1 {
-  font-family: 'lato', sans-serif;
+  font-family: "lato", sans-serif;
   font-weight: 900;
 }
 
 h2 {
-  font-family: 'lato', sans-serif;
+  font-family: "lato", sans-serif;
   font-weight: 700;
   font-size: 2rem;
 }
@@ -33,7 +33,7 @@ h2 {
 }
 
 .brand {
-  font-family: 'lato', sans-serif;
+  font-family: "lato", sans-serif;
   font-weight: 700;
   color: white;
   font-size: 2rem;
@@ -55,7 +55,7 @@ h2 {
 }
 
 .nav-menu .nav-link {
-  font-family: 'lato', sans-serif;
+  font-family: "lato", sans-serif;
   font-size: 1.25rem;
   text-decoration: none;
   color: white;
@@ -79,17 +79,21 @@ h2 {
 }
 
 .heading {
-  font-family: 'lato', sans-serif;
+  font-family: "lato", sans-serif;
   font-weight: 900;
   color: purple;
   text-align: center;
 }
 
 .heading2 {
-  font-family: 'lato', sans-serif;
+  font-family: "lato", sans-serif;
   font-weight: 700;
   color: purple;
   text-align: center;
+}
+
+#time {
+  margin-bottom: 10px;
 }
 
 .booklist {
@@ -100,7 +104,7 @@ h2 {
   margin: 15px 0;
   width: 500px;
   border: 1px solid black;
-  font-family: 'lato', sans-serif;
+  font-family: "lato", sans-serif;
   font-weight: 500;
   font-size: 1.25rem;
 }
@@ -143,7 +147,7 @@ h2 {
 }
 
 .contact-heading {
-  font-family: 'lato', sans-serif;
+  font-family: "lato", sans-serif;
   font-weight: 700;
   color: purple;
   text-align: center;
@@ -158,12 +162,12 @@ h2 {
 }
 
 .welcome-text {
-  font-family: 'lato', sans-serif;
+  font-family: "lato", sans-serif;
   font-size: 1.75rem;
 }
 
 .list-item {
-  font-family: 'lato', sans-serif;
+  font-family: "lato", sans-serif;
   font-size: 1.5rem;
 }
 
@@ -185,7 +189,7 @@ h2 {
 }
 
 .copyright {
-  font-family: 'lato', sans-serif;
+  font-family: "lato", sans-serif;
   font-weight: 500;
   font-size: 2rem;
   color: white;
