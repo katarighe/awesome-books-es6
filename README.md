@@ -27,7 +27,7 @@
 <!-- PROJECT DESCRIPTION -->
 # 📖 Awesome Books ES6<a name="about-project"></a>
 
-> This is the First JS Project of Microverse.
+> This is the First Revised JS Project of Microverse.
 
 Awesome Books ES6 is built as part of the 12-month Microverse Full-Stack Web Development Program.
 
