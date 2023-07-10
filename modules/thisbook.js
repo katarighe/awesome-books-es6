@@ -34,11 +34,11 @@ class thisBook {
     const bookListHTML = books
       .map((book) => {
         return `
-          <div class= "booklist">
-          <p>"${book.title}" by "${book.author}"</p>
-          <button onClick="thisBook.removeBook(${books.indexOf(book)})">Remove</button>
-          </div>
-          `;
+        <div class= "booklist">
+        <p>"${book.title}" by "${book.author}"</p>
+        <button onClick="thisBook.removeBook(${books.indexOf(book)})">Remove</button>
+        </div>
+        `;
       })
       .join("");
     return bookListHTML;
