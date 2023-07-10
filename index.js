@@ -1,8 +1,6 @@
 import displayDateTime from './modules/time.js';
 import thisBook from './modules/thisBook.js';
 
-displayDateTime();
-
 const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
   const title = document.querySelector('.title');
@@ -49,6 +47,8 @@ pages.forEach((page) => {
     }
   });
 });
+
+displayDateTime();
 
 const book = new thisBook();
 book.displayBooks();
