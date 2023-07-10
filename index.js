@@ -1,4 +1,4 @@
-import thisBook from './thisBook';
+import thisBook from './thisBook.js';
 
 const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
