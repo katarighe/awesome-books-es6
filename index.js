@@ -60,9 +60,6 @@ form.addEventListener('submit', (e) => {
 
 thisBook.displayBooks();
 
-const date = new Date();
-document.getElementById('time').innerHTML = date;
-
 const pages = document.querySelectorAll('.nav-link');
 const booklist = document.querySelector('.book-section');
 const formSection = document.querySelector('.form-section');
