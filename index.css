@@ -92,8 +92,11 @@ h2 {
   text-align: center;
 }
 
-#time {
-  margin-bottom: 10px;
+.time-text {
+  font-family: "lato", sans-serif;
+  font-size: 1.25rem;
+  margin-right: 10px;
+  text-align: right;
 }
 
 .booklist {
