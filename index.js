@@ -33,6 +33,7 @@ pages.forEach((page) => {
       booklist.classList.add('active');
       formSection.classList.remove('active');
       removeForm.classList.add('non-active');
+      document.querySelector('.nav-link.form-section').classList.add('active');
     } else if (e.target.classList.contains('form-section')) {
       formSection.classList.add('active');
       booklist.classList.add('non-active');
@@ -46,6 +47,7 @@ pages.forEach((page) => {
       formSection.classList.add('non-active');
       removeForm.classList.add('non-active');
       heading.classList.add('non-active');
+      document.querySelector('.nav-link.form-section').classList.add('active');
     }
   });
 });
