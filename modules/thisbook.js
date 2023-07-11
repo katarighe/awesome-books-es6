@@ -14,7 +14,7 @@ class thisBook {
   addNewBook(bookTitle, bookAuthor) {
     const bookStore = JSON.parse(localStorage.getItem('Addedbooks')) || [];
     const newBook = { title: bookTitle, author: bookAuthor };
-    bookStore.push(newBook) // = [...this.storedBooks, newBook];
+    bookStore.push(newBook);
     this.updateStoredBooks(bookStore);
     this.displayBooks();
   }
