@@ -1,6 +1,6 @@
 class thisBook {
   constructor() {
-    const storedBooks = this.getStoredBooks();
+    this.storedBooks = this.getStoredBooks();
   }
 
   getStoredBooks() {
@@ -10,43 +10,32 @@ class thisBook {
   updateStoredBooks(books) {
     localStorage.setItem('Added books', JSON.stringify(books));
   }
-  
+
   addNewBook(bookTitle, bookAuthor) {
-    const storedBooks = this.getStoredBooks();
-    const newBook = {
-      title: bookTitle,
-      author: bookAuthor,
-    };
-    storedBooks = storedBooks.concat(newBook);
-    this.updateStoredBooks(storedBooks);
+    const newBook = { title: bookTitle, author: bookAuthor };
+    this.storedBooks = [...this.storedBooks, newBook];
+    this.updateStoredBooks(this.storedBooks);
     this.displayBooks();
   }
-  
+
   removeBook(i) {
-    const storedBooks = this.getStoredBooks();
-    storedBooks.splice(i, 1);
-    this.updateStoredBooks(storedBooks);
+    this.storedBooks.splice(i, 1);
+    this.updateStoredBooks(this.storedBooks);
     this.displayBooks();
   }
 
   createBookListHTML(books) {
-    const bookListHTML = books
-      .map((book) => {
-        return `
-        <div class= "booklist">
+    return books.map((book) => `
+      <div class= "booklist">
         <p>"${book.title}" by "${book.author}"</p>
         <button onClick="thisBook.removeBook(${books.indexOf(book)})">Remove</button>
-        </div>
-        `;
-      })
-      .join('');
-    return bookListHTML;
+      </div>
+    `).join('');
   }
 
   displayBooks() {
     const listOfBooks = document.querySelector('.container');
-    const storedBooks = this.getStoredBooks();
-    const bookListHTML = this.createBookListHTML(storedBooks);
+    const bookListHTML = this.createBookListHTML(this.storedBooks);
     listOfBooks.innerHTML = bookListHTML;
   }
 }
