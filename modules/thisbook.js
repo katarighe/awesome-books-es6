@@ -1,9 +1,6 @@
-/* eslint-disable */
 class thisBook {
   constructor() {
-    if (localStorage.getItem('Added books') === null) {
-      localStorage.setItem('Added books', JSON.stringify([]));
-    }
+    const storedBooks = this.getStoredBooks();
   }
 
   getStoredBooks() {
@@ -13,6 +10,7 @@ class thisBook {
   updateStoredBooks(books) {
     localStorage.setItem('Added books', JSON.stringify(books));
   }
+  
   addNewBook(bookTitle, bookAuthor) {
     const storedBooks = this.getStoredBooks();
     const newBook = {
@@ -52,7 +50,5 @@ class thisBook {
     listOfBooks.innerHTML = bookListHTML;
   }
 }
-
-const book = new thisBook();
 
 export default thisBook;
