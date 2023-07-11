@@ -17,11 +17,11 @@ class thisBook {
       title: bookTitle,
       author: bookAuthor,
     };
-    storedBooks.push(newBook);
+    storedBooks = storedBooks.concat(newBook);
     this.updateStoredBooks(storedBooks);
     this.displayBooks();
   }
-
+  
   removeBook(i) {
     const storedBooks = this.getStoredBooks();
     storedBooks.splice(i, 1);
