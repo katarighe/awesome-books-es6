@@ -6,7 +6,8 @@ form.addEventListener('submit', (e) => {
   const title = document.querySelector('.title');
   const author = document.querySelector('.author');
   e.preventDefault();
-  thisBook.addNewBook(title.value, author.value);
+  const bookToAdd = new thisBook();
+  bookToAdd.addNewBook(title.value, author.value);
 });
 
 const pages = document.querySelectorAll('.nav-link');

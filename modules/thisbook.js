@@ -4,17 +4,18 @@ class thisBook {
   }
 
   getStoredBooks() {
-    return JSON.parse(localStorage.getItem('Added books'));
+    return JSON.parse(localStorage.getItem('Addedbooks')) || [];
   }
 
   updateStoredBooks(books) {
-    localStorage.setItem('Added books', JSON.stringify(books));
+    localStorage.setItem('Addedbooks', JSON.stringify(books));
   }
 
   addNewBook(bookTitle, bookAuthor) {
+    const bookStore = JSON.parse(localStorage.getItem('Addedbooks')) || [];
     const newBook = { title: bookTitle, author: bookAuthor };
-    this.storedBooks = [...this.storedBooks, newBook];
-    this.updateStoredBooks(this.storedBooks);
+    bookStore.push(newBook) // = [...this.storedBooks, newBook];
+    this.updateStoredBooks(bookStore);
     this.displayBooks();
   }
 
