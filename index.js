@@ -38,7 +38,6 @@ pages.forEach((page) => {
       contactSection.classList.add('non-active');
       removeForm.classList.add('active');
       heading.classList.add('non-active');
-      // Add the following line to keep the Add Book navigation link visible
       document.querySelector('.nav-link.form-section').classList.add('active');
     } else if (e.target.classList.contains('contact-section')) {
       contactSection.classList.add('active');
