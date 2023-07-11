@@ -123,7 +123,6 @@ h2 {
 }
 
 .container {
-  display: flex;
   width: 500px;
   align-items: center;
   justify-content: center;
