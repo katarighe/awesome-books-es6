@@ -1,18 +1,18 @@
-/* eslint class-methods-use-this: ["off"] */
+/* eslint arrow-body-style: ["error", "always"] */
 class thisBook {
   constructor() {
     this.storedBooks = this.getStoredBooks();
   }
 
-  getStoredBooks() {
+  getStoredBooks = () => {
     return JSON.parse(localStorage.getItem('Addedbooks')) || [];
   }
 
-  updateStoredBooks(books) {
+  updateStoredBooks = (books) => {
     localStorage.setItem('Addedbooks', JSON.stringify(books));
   }
 
-  addNewBook(bookTitle, bookAuthor) {
+  addNewBook = (bookTitle, bookAuthor) => {
     const bookStore = JSON.parse(localStorage.getItem('Addedbooks')) || [];
     const newBook = { title: bookTitle, author: bookAuthor };
     bookStore.push(newBook);
@@ -20,26 +20,42 @@ class thisBook {
     this.displayBooks();
   }
 
-  removeBook(i) {
+  removeBook = (i) => {
     this.storedBooks.splice(i, 1);
     this.updateStoredBooks(this.storedBooks);
     this.displayBooks();
   }
 
-  createBookListHTML(books) {
-    return books.map((book) => `
+  createBookListHTML = (books) => {
+    let bookListHTML = '';
+    for (let i = 0; i < books.length; i += 1) {
+      const { title, author } = books[i];
+      bookListHTML += `
       <div class= "booklist">
-        <p>"${book.title}" by "${book.author}"</p>
-        <button onClick="thisBook.removeBook(${books.indexOf(book)})">Remove</button>
+      <p>"${title}" by "${author}"</p>
+      <button class="remove-button" data-index="${i}">Remove</button>
       </div>
-    `).join('');
-  }
+      `;
+    }
+    return bookListHTML;
+  };
 
-  displayBooks() {
+  displayBooks = () => {
     const listOfBooks = document.querySelector('.container');
-    const bookListHTML = this.createBookListHTML(this.storedBooks);
-    listOfBooks.innerHTML = bookListHTML;
-  }
+    const storedBooks = this.getStoredBooks();
+    const bookListHTML = this.createBookListHTML(storedBooks);
+    listOfBooks.innerHTML = `
+      <ul class="book-ul">${bookListHTML}</ul>
+    `;
+
+    const removeButtons = document.querySelectorAll('.remove-button');
+    removeButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const index = parseInt(button.dataset.index, 10);
+        this.removeBook(index);
+      });
+    });
+  };
 }
 
 export default thisBook;
