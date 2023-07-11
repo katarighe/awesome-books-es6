@@ -1,3 +1,4 @@
+/* eslint class-methods-use-this: ["off"] */
 class thisBook {
   constructor() {
     this.storedBooks = this.getStoredBooks();
